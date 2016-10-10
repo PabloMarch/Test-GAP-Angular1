@@ -1,0 +1,73 @@
+%transition {
+  transition: background-color .2s ease-in-out;
+}
+
+.product-item {
+  padding: 0 0 3.5em;
+  overflow: hidden;
+  position: relative;
+  @extend %transition;
+
+  .btn {
+    outline: none;
+  }
+
+  &.selected {
+    border-color: $brand-success;
+    background-color: lighten($brand-success, 40);
+
+    h1 {
+      background-color: lighten($brand-success, 40);
+    }
+
+    .breadcrumb {
+      background-color: lighten($brand-success, 20);
+      color: #fff;
+    }
+
+    .btn-info {
+      @extend .btn-success;
+    }
+  }
+
+  h1 {
+    margin: 0 0;
+    padding: .4em;
+    background-color: $gap-gray-lighter;
+    font-size: 1.6em;
+    font-weight: 300;
+    color: $gap-gray;
+    @extend %transition;
+  }
+
+  figure img { width: 100%; }
+
+  footer {
+    width: 100%;
+    padding: 1em .5em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include clearfix;
+
+    .btn {
+      width: 46%;
+      margin: 0 2%;
+      float: left;
+    }
+  }
+
+  .caption {
+    padding-bottom: 0;
+  }
+
+    .breadcrumb {
+      margin: 0;
+      @extend %transition;
+    }
+
+  .product-summary {
+    padding: .8em;
+  }
+
+}

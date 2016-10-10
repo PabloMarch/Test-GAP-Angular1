@@ -1,0 +1,23 @@
+.top-header {
+  position: relative;
+  z-index: 10;
+
+  .header-fixed {
+    width: 100%;
+    //position: fixed;
+    top: 0;
+  }
+}
+
+.navbar {
+  margin-top: $panel-body-padding;
+
+  img { max-width: 150px; }
+
+  h1 {
+    padding: 0 .5em;
+    font-weight: lighter;
+    font-size: 1.6em;
+  }
+
+}

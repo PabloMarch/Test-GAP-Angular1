@@ -1,0 +1,24 @@
+<div class="row product-detail-header">
+  <div class="col-xs-12">
+    <a href="#/" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"> Back</i></a>
+  </div>
+</div>
+<div class="row product-detail" ng-controller="ProductDetail">
+  <div class="col-xs-12 col-sm-6">
+    <div class="product-media">
+      <img ng-src="assets/img/{{product.media}}" alt="{{product.model}}">
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <h1 class="alert alert-info">{{product.model}}</h1>
+    <div class="product-content">
+      <blockquote>{{product.summary}}</blockquote>
+      <div ng-bind-html="description"></div>
+      <ul>
+        <li><i class="glyphicon glyphicon-chevron-right"></i> {{product.metadata.brand}}</li>
+        <li><i class="glyphicon glyphicon-chevron-right"></i> {{product.metadata.year}}</li>
+        <li><i class="glyphicon glyphicon-chevron-right"></i> {{product.metadata.price}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

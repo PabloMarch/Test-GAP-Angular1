@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="alert alert-info">
+      <input type="text" class="form-control" placeholder="Search" ng-model="searchEntry.metadata.brand">
+    </div>
+  </div>
+</div>
+<div class="row" ng-controller="ProductList">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="product in products | orderBy:'model' | filter:searchEntry:strict">
+    <article class="product-item thumbnail" ng-class="{'selected':product.selected}">
+      <h1 class="text-center">{{product.model}}</h1>
+      <figure class="text-center">
+        <img ng-src="assets/img/{{product.media}}" alt="{{product.model}}" class="center-block">
+        <figcaption class="caption">
+          <ul class="breadcrumb">
+            <li>{{product.metadata.brand}}</li>
+            <li>{{product.metadata.year}}</li>
+            <li>$ {{product.metadata.price}}</li>
+          </ul>
+        </figcaption>
+      </figure>
+      <div class="product-summary">{{product.summary}}</div>
+      <footer>
+        <a href="#/products/{{product.key}}" class="btn btn-primary" role="button">More</a>
+        <button ng-click="compare(product, $index)" class="btn btn-info" role="button">Compare</button>
+      </footer>
+    </article>
+  </div>
+</div>
